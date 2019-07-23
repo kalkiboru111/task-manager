@@ -13,10 +13,10 @@
     <script type="text/javascript">
         $(document).ready(function() {
             $('.collapsible').collapsible();
+            document.getElementById("matfix").addEventListener("click", function(e) {
+                e.stopPropagation();
+            });
         })
-        document.getElementById("matfix").addEventListener("click", function(e) {
-            e.stopPropagation();
-        });
     </script>
 
 </body>
