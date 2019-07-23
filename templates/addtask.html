@@ -5,45 +5,18 @@
 <div class="row">
     <form action="" method="POST" class="col s12">
         <div class="row">
-            <div class="input-field col s6">
-                <input placeholder="Placeholder" id="first_name" type="text" class="validate">
-                <label for="first_name">First Name</label>
-            </div>
-            <div class="input-field col s6">
-                <input id="last_name" type="text" class="validate">
-                <label for="last_name">Last Name</label>
-            </div>
-        </div>
-        <div class="row">
             <div class="input-field col s12">
-                <input disabled value="I am not editable" id="disabled" type="text" class="validate">
-                <label for="disabled">Disabled</label>
+                <i class="material icons prefix">assignment</i>
+                <input id="task_name" name="task_name" type="text" class="validate">
+                <label for="icon-prefix">Task Name</label>
             </div>
-        </div>
-        <div class="row">
             <div class="input-field col s12">
-                <input id="password" type="password" class="validate">
-                <label for="password">Password</label>
-            </div>
-        </div>
-        <div class="row">
-            <div class="input-field col s12">
-                <input id="email" type="email" class="validate">
-                <label for="email">Email</label>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col s12">
-                This is an inline input field:
-                <div class="input-field inline">
-                    <input id="email_inline" type="email" class="validate">
-                    <label for="email_inline">Email</label>
-                    <span class="helper-text" data-error="wrong" data-success="right">Helper text</span>
-                </div>
+                <i class="material icons prefix">subject</i>
+                <text_area name="task_description" id="task_description" class="materialize_textarea"></text_area>
+                <label for="icon_telephone">Task Description</label>
             </div>
         </div>
     </form>
 </div>
-
 
 {% endblock %}
