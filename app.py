@@ -1,13 +1,12 @@
 import os
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, redirect, request, url_for
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 
 
 app = Flask(__name__)
-
 app.config["MONGO_DBNAME"] = "task manager"
-app.config["MONGO_URI"] = "mongodb+srv://root:83ZQythXiDEUTHCq@myfirstcluster-qstcj.mongodb.net/task_manager?retryWrites=true&w=majority"
+app.config["MONGO_URI"] = "mongodb://root:83ZQythXiDEUTHCq@myfirstcluster-shard-00-00-qstcj.mongodb.net:27017,myfirstcluster-shard-00-01-qstcj.mongodb.net:27017,myfirstcluster-shard-00-02-qstcj.mongodb.net:27017/test?ssl=true&replicaSet=myfirstcluster-shard-0&authSource=admin&retryWrites=true&w=majority"
 
 mongo = PyMongo(app)
 
@@ -33,6 +32,7 @@ def edit_task(task_id):
     all_categories = mongo.db.categories.find()
     return render_template('edittask.html', task =the_task, 
 						categories = all_categories)
+						
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
     port=int(os.environ.get('PORT')),
