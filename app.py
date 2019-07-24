@@ -31,8 +31,8 @@ def insert_task():
 def edit_task(task_id):
     the_task = mongo.db.tasks.find_one({"_id": ObjectId(task_id)})
     all_categories = mongo.db.categories.find()
-    return: render_template('edittask.html', task =_task, categories = category_list)
-
+    return render_template('edittask.html', task =the_task, 
+						categories = all_categories)
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
     port=int(os.environ.get('PORT')),
